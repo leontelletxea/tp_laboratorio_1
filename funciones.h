@@ -2,5 +2,5 @@
 #define FUNCIONES_H_INCLUDED
 #endif // FUNCIONES_H_INCLUDED
 
-float Suma(float operando1, float operando2);
+float Suma(float A, float B)
 
