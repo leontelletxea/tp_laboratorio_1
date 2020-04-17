@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1586814303 source:c:\users\leont\desktop\programacion & labo i\trabajos practicos\tp 1\funciones.c
+	"funciones.h"
+
+1586813058 c:\users\leont\desktop\programacion & labo i\trabajos practicos\tp 1\funciones.h
+
+1586814936 source:c:\users\leont\desktop\programacion & labo i\trabajos practicos\tp 1\main.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+
+1586814303 source:c:\users\leont\desktop\programacion & labo i\repositorios git\trabajos practicos\tp 1\funciones.c
+	"funciones.h"
+
+1586813058 c:\users\leont\desktop\programacion & labo i\repositorios git\trabajos practicos\tp 1\funciones.h
+
+1586817388 source:c:\users\leont\desktop\programacion & labo i\repositorios git\trabajos practicos\tp 1\main.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+
+1586814303 source:c:\users\leont\desktop\programacion & labo i\repositorios git\trabajos practicos\tp_laboratorio_1\funciones.c
+	"funciones.h"
+
+1586813058 c:\users\leont\desktop\programacion & labo i\repositorios git\trabajos practicos\tp_laboratorio_1\funciones.h
+
+1586817388 source:c:\users\leont\desktop\programacion & labo i\repositorios git\trabajos practicos\tp_laboratorio_1\main.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+
+1587073297 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\funciones.c
+	"funciones.h"
+
+1587073681 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\funciones.h
+
+1587073681 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\main.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+
+1587081537 source:c:\users\leon\desktop\utnfra\programacion & labo i\repositorios git\tp_laboratorio_1\funciones.c
+	"funciones.h"
+
+1587080215 c:\users\leon\desktop\utnfra\programacion & labo i\repositorios git\tp_laboratorio_1\funciones.h
+
+1587081843 source:c:\users\leon\desktop\utnfra\programacion & labo i\repositorios git\tp_laboratorio_1\main.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+
+1587081537 source:c:\users\leon\desktop\utnfra\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\funciones.c
+	"funciones.h"
+
+1587080215 c:\users\leon\desktop\utnfra\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\funciones.h
+
+1587081843 source:c:\users\leon\desktop\utnfra\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\main.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+
+1587083884 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\funciones.c
+	"funciones.h"
+
+1587083884 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\funciones.h
+
+1587081843 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\main.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+
