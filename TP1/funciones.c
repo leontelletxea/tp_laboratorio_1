@@ -1,151 +1,153 @@
 #include "funciones.h"
 
-int funciones_Menu(float operando1, float operando2, int flag1, int flag2)
+int funciones_menu(float operatorOne, float operatorTwo, int flag1, int flag2)
 {
-        int opcion;
+        int option;
 
+        /**< Muestro segun el flag que cambia en case 1 y case 2. */
         if(flag1==0)
         {
+            printf("##########CALCULADORA##########\n");
             printf("1. Ingresar 1er operando (A=x): \n");
         }else{
-
-            printf("\n1. 1er operando (A=%.1f): \n", operando1);
+            printf("\n##########CALCULADORA##########\n");
+            printf("1. 1er operando (A=%.1f): \n", operatorOne);
         }
         if(flag2==0)
         {
             printf("2. Ingresar 2do operando (B=y): \n");
         }else{
-            printf("2. 2do operando (B=%.1f): \n", operando2);
+            printf("2. 2do operando (B=%.1f): \n", operatorTwo);
         }
         if(flag1==0)
         {
             printf("3. Calcular todas las operaciones: \n a) Calcular la suma (A + B)\n b) Calcular la resta (A - B)\n c) Calcular la division (A / B)\n d) Calcular la multiplicacion (A * B)\n e) Calcular el factorial (A!)\n");
             printf("4. Informar resultados:\n a) Calcular la suma (A + B)= \n b) Calcular la resta (A - B)= \n c) Calcular la division (A / B)= \n d) Calcular la multiplicacion (A * B)= \n e) Calcular el factorial (A!)= \n");
         }else{
-            printf("3. Calcular todas las operaciones: \n a) Calcular la suma (%.1f + %.1f)\n b) Calcular la resta (%.1f - %.1f)\n c) Calcular la division (%.1f / %.1f)\n d) Calcular la multiplicacion (%.1f * %.1f)\n e) Calcular el factorial (%.1f!)\n", operando1, operando2, operando1, operando2, operando1, operando2, operando1, operando2, operando1);
-            printf("4. Informar resultados:\n a) Calcular la suma (%.1f + %.1f)= \n b) Calcular la resta (%.1f - %.1f)= \n c) Calcular la division (%.1f / %.1f)= \n d) Calcular la multiplicacion (%.1f * %.1f)= \n e) Calcular el factorial (%.1f!)= \n", operando1, operando2, operando1, operando2, operando1, operando2, operando1, operando2, operando1);
+            printf("3. Calcular todas las operaciones: \n a) Calcular la suma (%.1f + %.1f)\n b) Calcular la resta (%.1f - %.1f)\n c) Calcular la division (%.1f / %.1f)\n d) Calcular la multiplicacion (%.1f * %.1f)\n e) Calcular el factorial (%.1f!)\n", operatorOne, operatorTwo, operatorOne, operatorTwo, operatorOne, operatorTwo, operatorOne, operatorTwo, operatorOne);
+            printf("4. Informar resultados:\n a) Calcular la suma (%.1f + %.1f)= \n b) Calcular la resta (%.1f - %.1f)= \n c) Calcular la division (%.1f / %.1f)= \n d) Calcular la multiplicacion (%.1f * %.1f)= \n e) Calcular el factorial (%.1f!)= \n", operatorOne, operatorTwo, operatorOne, operatorTwo, operatorOne, operatorTwo, operatorOne, operatorTwo, operatorOne);
         }
             printf("5. Salir.\n");
             printf("Elija una opcion: ");
-            scanf("%d", &opcion);
+            scanf("%d", &option);
             system("cls");
 
-        return opcion;
+        return option;
 }
 
-float funciones_GetOperando1()
+float funciones_getOperatorOne(void)
 {
     float operando1;
 
-    printf("1. Ingrese el 1er operando (A=x): ");
+    printf("1. Ingrese el 1er operando (A=x): "); /**< Pide y devuelve un flotante. */
     scanf("%f", &operando1);
 
     return operando1;
 }
 
-float funciones_GetOperando2()
+float funciones_getOperatorTwo(void)
 {
-    float operando2;
+    float operatorTwo;
 
-    printf("2. Ingrese el 2do operando (B=y): ");
-    scanf("%f", &operando2);
+    printf("2. Ingrese el 2do operando (B=y): "); /**< Pide y devuelve un flotante */
+    scanf("%f", &operatorTwo);
 
-    return operando2;
+    return operatorTwo;
 }
 
-void funciones_CalcularOperaciones(float operando1, float operando2)
+void funciones_calculateOperations(float operatorOne, float operatorTwo)
 {
-    printf("3. Calculando operaciones...\n a) Calcular la suma (%.1f + %.1f)\n b) Calcular la resta (%.1f - %.1f)\n c) Calcular la division (%.1f / %.1f)\n d) Calcular la multiplicacion (%.1f * %.1f)\n e) Calcular el factorial (%.1f!)\n", operando1, operando2, operando1, operando2, operando1, operando2, operando1, operando2, operando1);
+    printf("3. Calculando operaciones...\n a) Calcular la suma (%.1f + %.1f)\n b) Calcular la resta (%.1f - %.1f)\n c) Calcular la division (%.1f / %.1f)\n d) Calcular la multiplicacion (%.1f * %.1f)\n e) Calcular el factorial (%.1f!)\n", operatorOne, operatorTwo, operatorOne, operatorTwo, operatorOne, operatorTwo, operatorOne, operatorTwo, operatorOne);
 }
 
-void funciones_MostrarOperaciones(float operando1, float operando2, int flag3, float mostrarSuma, float mostrarResta, float mostrarDivision, float mostrarMultiplicacion, float mostrarFactorial)
+void funciones_showOperations(float operatorOne, float operatorTwo, int flag3, float showSum, float showSubtraction, float showDivision, float showMultiplication, float showFactorial)
 {
+    /**< Muestro segun el flag 3 que cambia si el usuario entro en el case 3 (comprueba que haya ingresado los numeros). */
     if(flag3==1)
         {
-            printf("4. Los resultados son:\n a) Calcular la suma (%.1f + %.1f)= %.1f\n b) Calcular la resta (%.1f - %.1f)= %.1f\n ", operando1, operando2, mostrarSuma, operando1, operando2, mostrarResta);
-    if(mostrarDivision != -1.00 )
+            printf("4. Los resultados son:\n a) Calcular la suma (%.1f + %.1f)= %.1f\n b) Calcular la resta (%.1f - %.1f)= %.1f\n ", operatorOne, operatorTwo, showSum, operatorOne, operatorTwo, showSubtraction);
+    if(showDivision != -1.00 )/**< Valor asignado en caso que el divisor sea 0. */
         {
-            mostrarDivision = printf("c) Calcular la division (%.1f / %.1f)= %.1f\n",operando1, operando2, mostrarDivision);
+            showDivision = printf("c) Calcular la division (%.1f / %.1f)= %.1f\n",operatorOne, operatorTwo, showDivision);
         }else{
-            mostrarDivision = printf("c) Calcular la division (%.1f / %.1f)= Error, no es posible dividir por 0.\n", operando1, operando2);
+            showDivision = printf("c) Calcular la division (%.1f / %.1f)= Error, no es posible dividir por 0.\n", operatorOne, operatorTwo);
         }
-           printf(" d) Calcular la multiplicacion (%.1f * %.1f)= %.1f\n",operando1, operando2, mostrarMultiplicacion);
-    if(mostrarFactorial != -1.00)
+           printf(" d) Calcular la multiplicacion (%.1f * %.1f)= %.1f\n",operatorOne, operatorTwo, showMultiplication);
+    if(showFactorial != -1.00) /**< Valor asignado en caso de que el numero sea menor a cero o decimal. */
         {
-           mostrarFactorial = printf(" e) Calcular el factorial (%.1f!)= %.1f\n", operando1, mostrarFactorial);
+           showFactorial = printf(" e) Calcular el factorial (%.1f!)= %.1f\n", operatorOne, showFactorial);
         }else{
-           mostrarFactorial = printf(" e) Calcular el factorial (%.1f!)= Error, no es posible realizar el factorial de un negativo o decimal.\n", operando1);
+           showFactorial = printf(" e) Calcular el factorial (%.1f!)= Error, no es posible realizar el factorial de un negativo o decimal.\n", operatorOne);
         }
         }else{
-           printf("Porfavor, calcule las operaciones antes de mostrarlas:\n\n");
+           printf("Porfavor, calcule las operaciones antes de mostrarlas:\n\n"); /**< Mensaje si el usuario muestra antes de calcular. */
            flag3=0;
         }
 }
 
-float funciones_Suma(float operando1, float operando2)
+float funciones_sum(float operatorOne, float operatorTwo)
 {
-    float resultadoSuma;
+    float outcomeSum;
 
-    resultadoSuma = operando1 + operando2;
+    outcomeSum = operatorOne + operatorTwo;
 
-    return resultadoSuma;
+    return outcomeSum;
 }
 
-float funciones_Resta(float operando1, float operando2)
+float funciones_subtraction(float operatorOne, float operatorTwo)
 {
-    float resultadoResta;
+    float outcomeSubtraction;
 
-    resultadoResta = operando1 - operando2;
+    outcomeSubtraction = operatorOne - operatorTwo;
 
-    return resultadoResta;
+    return outcomeSubtraction;
 }
 
-float funciones_Dividir(float operando1, float operando2)
+float funciones_division(float operatorOne, float operatorTwo)
 {
-    float resultadoDivision;
+    float outcomeDivision;
 
-    if(operando2 != 0)
+    if(operatorTwo!= 0)
     {
-    resultadoDivision= operando1 / operando2;
+    outcomeDivision= operatorOne / operatorTwo;
     }else{
-    resultadoDivision = -1.00;
+    outcomeDivision = -1.00; /**< Si el divisor es 0, asigno -1.00 para informar el caso de error. */
     }
 
-    return resultadoDivision;
+    return outcomeDivision;
 }
 
-float funciones_Multiplicar(float operando1, float operando2)
+float funciones_multiplication(float operatorOne, float operatorTwo)
 {
-    float resultadoMultiplicion;
+    float outcomeMultiplication;
 
-    resultadoMultiplicion = operando1 * operando2;
+    outcomeMultiplication = operatorOne * operatorTwo;
 
-    return resultadoMultiplicion;
+    return outcomeMultiplication;
 }
 
-float funciones_Factorial(float operando1)
+float funciones_factorial(float operatorOne)
 {
-    int operandoInt = operando1;
-    float operandoFloat = operando1;
-    double resultadoFactorial = 1;
+    /**< Asigno el primer numero ingresado a una variable float e int. */
+    int operatorInt = operatorOne;
+    float operatorFloat = operatorOne;
+    double outcomeFactorial = 1; /**< Doy un valor inicial para que el resultado vaya cambiando en cada iteracion */
 
-    if(operandoInt-operandoFloat==0)
+    if(operatorInt-operatorFloat==0) /**< Si el resultado de el entero - el flotante es 0, el numero ingresado es entero. */
     {
-    if( operando1 > 0)
+    if( operatorOne > 0) /**< Si ese entero es mayor a cero, entra. */
     {
-
-    for(operando1; operando1>0; operando1--)
+       for(operatorOne; operatorOne>0; operatorOne--)
     {
-    resultadoFactorial = operando1 * resultadoFactorial;
+       outcomeFactorial = operatorOne * outcomeFactorial; /**< Realiza el factorial decrementando en uno en cada iteracion y multiplicandolo con el resultado. */
     }
-
     }else{
-    resultadoFactorial = -1;
+        outcomeFactorial = -1; /**< Si la resta del entero menos el flotante es != 0, asigno -1.00 para informar el caso de error. */
     }
-    return resultadoFactorial;
+    return outcomeFactorial;
     }else
     {
-        resultadoFactorial = -1;
-        return resultadoFactorial;
+        outcomeFactorial = -1; /**< Si el numero es menor o igual a cero, asigno -1.00 para informal el caso de error. */
+        return outcomeFactorial;
     }
 }

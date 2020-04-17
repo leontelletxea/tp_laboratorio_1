@@ -59,13 +59,13 @@
 	<stdio.h>
 	<stdlib.h>
 
-1587084373 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\funciones.c
+1587155980 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\funciones.c
 	"funciones.h"
 
-1587083884 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\funciones.h
+1587155980 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\funciones.h
 
-1587081843 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\main.c
-	"funciones.h"
+1587155980 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp1\main.c
 	<stdio.h>
 	<stdlib.h>
+	"funciones.h"
 
