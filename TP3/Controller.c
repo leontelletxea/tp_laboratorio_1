@@ -38,7 +38,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     int id;
     char name[51];
     int hoursWorked;
-    int salary;
+    float salary;
 
     if(pArrayListEmployee!=NULL)
     {
@@ -55,7 +55,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
             hoursWorked = getInt("\nIngrese la cantidad de horas trabajadas: ","\nError, ingrese la cantidad de horas trabajadas: ", 1, 48);
             employee_setHorasTrabajadas(auxEmployee, hoursWorked);
 
-            salary = getInt("\nIngrese el sueldo: ","\nError, ingrese el sueldo: ", 10000, 100000);
+            salary = getFloat("\nIngrese el sueldo: ","\nError, ingrese el sueldo: ", 10000, 100000);
             employee_setSueldo(auxEmployee, salary);
 
             ll_add(pArrayListEmployee, auxEmployee);
