@@ -22,7 +22,6 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
             if(i==0)
             {
                 fscanf(pFile, "%[^\n]\n", cabecera);
-                continue;
                 i++;
             }
             fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas, sueldo);

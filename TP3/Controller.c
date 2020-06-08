@@ -124,7 +124,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
             auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
             fwrite(auxEmployee, sizeof(Employee),1,pData);
         }
-        printf("Se cargo la lista correctamente en el archivo data.bin (Binario)\n\n");
+        printf("Se guardo la lista correctamente en el archivo data.bin (Binario)\n\n");
     }else{
     printf("Imposible cargar el archivo");
     }
@@ -151,7 +151,7 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
             auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
             fwrite(auxEmployee, sizeof(Employee),1,pData);
         }
-        printf("Se cargo la lista correctamente en el archivo data.bin (Binario)\n\n");
+        printf("Se se guardo la lista correctamente en el archivo data.bin (Binario)\n\n");
     }else{
     printf("Imposible cargar el archivo");
     }
