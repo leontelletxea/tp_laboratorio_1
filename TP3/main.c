@@ -5,7 +5,7 @@
 #include "Employee.h"
 
 /****************************************************
-    Menu:
+     Menu:
      1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).
      2. Cargar los datos de los empleados desde el archivo data.csv (modo binario).
      3. Alta de empleado
@@ -15,17 +15,22 @@
      7. Ordenar empleados
      8. Guardar los datos de los empleados en el archivo data.csv (modo texto).
      9. Guardar los datos de los empleados en el archivo data.csv (modo binario).
-    10. Salir
+     10. Salir
 *****************************************************/
 
 
 int main()
 {
-    LinkedList* miLista = ll_newLinkedList();
-    int size;
-    Employee* aux;
+    LinkedList* listEmployee = ll_newLinkedList();
     int i;
+    //int size;
+    //int i;
 
+    optionMenu(listEmployee);
+
+    ////////////////////////////////////////////////////
+
+    /**
     Employee* e1 = (Employee*) malloc(sizeof(Employee));
     Employee* e2 = (Employee*) malloc(sizeof(Employee));
     Employee* e3 = (Employee*) malloc(sizeof(Employee));
@@ -62,8 +67,12 @@ int main()
         printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
 
     }
+    */
 
-/*    printf("Remuevo 1\n");
+    ////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+    printf("Remuevo 1\n");
 
     ll_remove(miLista, 1);
 
@@ -78,7 +87,7 @@ int main()
     printf("El indice de e2 es: %d\n", ll_indexOf(miLista,e3));
     */
 
-
-
     return 0;
 }
+
+
