@@ -56,28 +56,29 @@ char getChar(char message[],char messageError[], char answer1, char answer2)
     return letterValue;
 }
 
-void getWord(char wordValue[], char message[])
+int getWord(char wordValue[], char message[])
 {
     int len;
     int i;
-    int flag=0;
+    int ret=0;
 
-    do
+
+    printf("%s", message);
+    fflush(stdin);
+    fgets(wordValue, 51, stdin);
+
+    len=strlen(wordValue);
+    wordValue[len-1]='\0';
+
+    for(i=0; i<len; i++)
     {
-        printf("%s", message);
-        fflush(stdin);
-        fgets(wordValue, 51, stdin);
-
-        len=strlen(wordValue);
-        wordValue[len-1]='\0';
-
-        for(i=0; i<len; i++)
+        if(wordValue[i] =='0' || wordValue[i] =='1' || wordValue[i] =='2' || wordValue[i] =='3' || wordValue[i] =='4'
+        || wordValue[i] =='5' || wordValue[i] =='6' || wordValue[i] =='7' || wordValue[i] =='8' || wordValue[i] =='9')
         {
-            if(wordValue[i] <65 && wordValue[i] >122)
-            {
-                flag=1;
-            }
+            ret = -1;
+            break;
         }
-    }while(flag==1);
+    }
 
+    return ret;
 }

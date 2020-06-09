@@ -36,8 +36,9 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
     Employee* auxEmployee;
     int id;
-    char name[51];
     int hoursWorked;
+    int ret;
+    char name[51];
     float salary;
 
     if(pArrayListEmployee!=NULL)
@@ -49,7 +50,11 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
             printf("Id asignado: %d\n", id);
             employee_setId(auxEmployee, id);
 
-            getWord(name, "\nIngrese el nombre del empleado: ");
+            do
+            {
+                ret = getWord(name, "\nIngrese el nombre del empleado: ");
+            }while(ret!=0);
+
             employee_setNombre(auxEmployee, name);
 
             hoursWorked = getInt("\nIngrese la cantidad de horas trabajadas: ","\nError, ingrese la cantidad de horas trabajadas: ", 1, 48);
@@ -109,9 +114,13 @@ return 1;
 int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
 {
     Employee* auxEmployee;
+    FILE* pData;
     int i;
     int size;
-    FILE* pData;
+    int* id=0;
+    int* horasTrabajadas=0;
+    float* sueldo=0;
+    char nombre[51];
 
     size = ll_len(pArrayListEmployee);
 
@@ -121,10 +130,18 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
     {
         for(i=0; i<size; i++)
         {
+            if(i==0)
+            {
+                fprintf(pData, "id,nombre,horasTrabajadas,sueldo\n");
+            }
             auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
-            fwrite(auxEmployee, sizeof(Employee),1,pData);
+            employee_getId(auxEmployee, &id);
+            employee_getNombre(auxEmployee, nombre);
+            employee_getHorasTrabajadas(auxEmployee, &horasTrabajadas);
+            //employee_getSueldo(auxEmployee, &sueldo);
+            fprintf(pData, "%d,%s,%d,%f\n", id, nombre, horasTrabajadas, auxEmployee->sueldo);
         }
-        printf("Se guardo la lista correctamente en el archivo data.bin (Binario)\n\n");
+        printf("Se guardo la lista correctamente en el archivo data.csv (Texto)\n\n");
     }else{
     printf("Imposible cargar el archivo");
     }
@@ -200,6 +217,7 @@ void optionMenu(LinkedList* listEmployee)
         case 7:
             break;
         case 8:
+            controller_saveAsText("data.csv", listEmployee);
             break;
         case 9:
             controller_saveAsBinary("data.bin", listEmployee);
@@ -210,4 +228,3 @@ void optionMenu(LinkedList* listEmployee)
         }while(option!=10);
         printf("Exit Menu...\n");
 }
-

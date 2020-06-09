@@ -4,4 +4,4 @@ float getFloat(char message[],char messageError[], float min, float max);
 
 char getChar(char message[],char messageError[], char answer1, char answer2);
 
-void getWord(char wordValue[], char message[]);
+int getWord(char wordValue[], char message[]);

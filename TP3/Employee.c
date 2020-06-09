@@ -46,7 +46,14 @@ int employee_setNombre(Employee* this,char* nombre)
 
 int employee_getNombre(Employee* this,char* nombre)
 {
+    int ret = 0;
+    if(this!=NULL)
+    {
+        strcpy(nombre, this->nombre);
+        ret = 1;
+    }
 
+    return ret;
 }
 
 
@@ -64,8 +71,14 @@ int employee_setSueldo(Employee* this,float sueldo)
 }
 int employee_getSueldo(Employee* this,float* sueldo)
 {
+    int ret = 0;
+    if(this!=NULL)
+    {
+        *sueldo = this->sueldo;
+        ret = 1;
+    }
 
-
+    return ret;
 }
 
 int employee_setId(Employee* this,int id)
@@ -81,13 +94,20 @@ int employee_setId(Employee* this,int id)
 }
 int employee_getId(Employee* this,int* id)
 {
+    int ret = 0;
+    if(this!=NULL)
+    {
+        *id = this->id;
+        ret = 1;
+    }
 
+    return ret;
 }
 
 int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
 {
     int ret = 0;
-    if(this!=NULL && horasTrabajadas < (int*)48)
+    if(this!=NULL && horasTrabajadas < 48)
     {
         this->horasTrabajadas = (int)horasTrabajadas;
         ret = 1;
@@ -95,9 +115,16 @@ int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
 
     return ret;
 }
-int employee_getHorasTrabajadas(Employee* this,int* horasTrabajdas)
+int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
 {
+    int ret = 0;
+    if(this!=NULL)
+    {
+        *horasTrabajadas = this->horasTrabajadas;
+        ret = 1;
+    }
 
+    return ret;
 }
 
 
