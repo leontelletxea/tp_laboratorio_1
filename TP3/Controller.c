@@ -119,7 +119,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
     int size;
     int* id=0;
     int* horasTrabajadas=0;
-    float* sueldo=0;
+    //float* sueldo=0;
     char nombre[51];
 
     size = ll_len(pArrayListEmployee);
@@ -138,8 +138,8 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
             employee_getId(auxEmployee, &id);
             employee_getNombre(auxEmployee, nombre);
             employee_getHorasTrabajadas(auxEmployee, &horasTrabajadas);
-            //employee_getSueldo(auxEmployee, &sueldo);
-            fprintf(pData, "%d,%s,%d,%f\n", id, nombre, horasTrabajadas, auxEmployee->sueldo);
+            //employee_getSueldo(auxEmployee, &sueldo); El getter de sueldo me devuelve cero por eso lo comento
+            fprintf(pData, "%d,%s,%d,%f\n", (int)id, nombre, (int)horasTrabajadas, auxEmployee->sueldo);
         }
         printf("Se guardo la lista correctamente en el archivo data.csv (Texto)\n\n");
     }else{
