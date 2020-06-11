@@ -9,15 +9,19 @@
      1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).
      2. Cargar los datos de los empleados desde el archivo data.csv (modo binario).
      3. Alta de empleado
-     !4. Modificar datos de empleado
-     !5. Baja de empleado
+     4. Modificar datos de empleado
+     5. Baja de empleado
      6. Listar empleados
-     !7. Ordenar empleados
+     7. Ordenar empleados
      8. Guardar los datos de los empleados en el archivo data.csv (modo texto).
      9. Guardar los datos de los empleados en el archivo data.csv (modo binario).
      10. Salir
 *****************************************************/
 
+/** Nota: todas las variables y funciones en español, fueron brindadas por el profesor
+a la hora de pasar el comprimido con el proyecto. Si los warnings en el
+controller_ListEmployee() pasando el argumento 2 aparecen, el profesor
+dijo que lo pongamos exactamente de esa manera */
 
 int main()
 {

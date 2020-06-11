@@ -8,9 +8,9 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
 {
     Employee* auxEmployee;
     char id[51];
-    char nombre[51];
-    char horasTrabajadas[51];
-    char sueldo[51];
+    char name[51];
+    char hoursWorked[51];
+    char salary[51];
     char title[51];
     int i=-1;
 
@@ -24,8 +24,8 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
                 fscanf(pFile, "%[^\n]\n", title);
                 i++;
             }
-            fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas, sueldo);
-            auxEmployee = employee_newParametros(id, nombre, horasTrabajadas, sueldo);
+            fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, name, hoursWorked, salary);
+            auxEmployee = employee_newParametros(id, name, hoursWorked, salary);
             ll_add(pArrayListEmployee, auxEmployee);
         }
         printf("*Se cargaron los datos desde el archivo data.csv (Modo Texto)\n\n");
