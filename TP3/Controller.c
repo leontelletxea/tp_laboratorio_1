@@ -234,26 +234,35 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
     do
     {
         system("cls");
-        printf("\n1.Ordenar por Nombre de la A-Z");
+        printf("\n1.Ordenar por Nombre de la A-Z\n");
         printf("2.Ordenar por Nombre de la Z-A\n");
         printf("3.Ordenar por Id de menor a mayor\n");
         printf("4.Ordenar por Id mayor a menor\n");
         printf("5.Salir del menu ordenar\n");
-        option = getInt("\nElija una opcion: ", "\nError, elija una opcion valida: ", 1, 5);
+        option = getInt("Elija una opcion: ", "\nError, elija una opcion valida: ", 1, 5);
+        system("cls");
 
         switch(option)
         {
         case 1:
-            ll_sort(listEmployee, employee_CompareByName, 1);
+            ll_sort(pArrayListEmployee, employee_CompareByName, 1);
+            controller_ListEmployee(pArrayListEmployee);
+            system("pause");
             break;
         case 2:
-            ll_sort(listEmployee, employee_CompareByName, 0);
+            ll_sort(pArrayListEmployee, employee_CompareByName, 0);
+            controller_ListEmployee(pArrayListEmployee);
+            system("pause");
             break;
         case 3:
-            ll_sort(listEmployee, employee_CompareById, 1);
+            ll_sort(pArrayListEmployee, employee_CompareById, 1);
+            controller_ListEmployee(pArrayListEmployee);
+            system("pause");
             break;
         case 4:
-            ll_sort(listEmployee, employee_CompareById, 0);
+            ll_sort(pArrayListEmployee, employee_CompareById, 0);
+            controller_ListEmployee(pArrayListEmployee);
+            system("pause");
             break;
         }
     }while(option!=5);
@@ -369,7 +378,7 @@ void optionMenu(LinkedList* listEmployee)
             controller_ListEmployee(listEmployee);
             break;
         case 7:
-            controller_ListEmployee(listEmployee);
+            controller_sortEmployee(listEmployee);
             break;
         case 8:
             controller_saveAsText("data.csv", listEmployee);
