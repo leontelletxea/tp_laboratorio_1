@@ -63,7 +63,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
             }while(ret!=0);
             employee_setNombre(auxEmployee, name);
 
-            hoursWorked = getInt("\nIngrese la cantidad de horas trabajadas: ","\nError, ingrese la cantidad de horas trabajadas: ", 1, 48);
+            hoursWorked = getInt("\nIngrese la cantidad de horas trabajadas: ","\nError, ingrese la cantidad de horas trabajadas: ", 1, 350);
             employee_setHorasTrabajadas(auxEmployee, hoursWorked);
 
             salary = getFloat("\nIngrese el sueldo: ","\nError, ingrese el sueldo: ", 10000, 100000);

@@ -107,7 +107,7 @@ int employee_getId(Employee* this,int* id)
 int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
 {
     int ret = 0;
-    if(this!=NULL && horasTrabajadas < 48)
+    if(this!=NULL && horasTrabajadas <= 350)
     {
         this->horasTrabajadas = (int)horasTrabajadas;
         ret = 1;
