@@ -46,7 +46,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
         auxEmployee = employee_new();
         if(auxEmployee!=NULL)
         {
-            id = createEmployeeId();
+            id = createEmployeeId(pArrayListEmployee);
             printf("Id asignado: %d\n", id);
             employee_setId(auxEmployee, id);
 
@@ -212,7 +212,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
     char nombre[51];
 
     size = ll_len(pArrayListEmployee);
-    printf("  Id     Nombre  Horas Trabajadas        Sueldo\n");
+    printf("  Id     Nombre  Horas Trabajadas        Sueldo\n\n");
     for(i=0; i<size; i++)
     {
         auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
@@ -391,4 +391,30 @@ void optionMenu(LinkedList* listEmployee)
         }
         }while(option!=10);
         printf("Exit Menu...\n");
+}
+
+int createEmployeeId(LinkedList* pArrayListEmployee)
+{
+    Employee* auxEmployee;
+    int i;
+    int size;
+    int maximo;
+
+    size = ll_len(pArrayListEmployee);
+
+    if(size>0)
+    {
+        for(i=0; i<size; i++)
+        {
+            auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
+            if(auxEmployee->id > maximo || i==0)
+            {
+                maximo = auxEmployee->id;
+            }
+        }
+    }else{
+        maximo = 0;
+    }
+
+    return maximo+1;
 }

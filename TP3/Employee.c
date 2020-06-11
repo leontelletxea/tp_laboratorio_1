@@ -166,11 +166,3 @@ int employee_CompareById(Employee* e1, Employee* e2)
     }
     return ret;
 }
-
-
-int createEmployeeId(void)
-{
-    static int id=1000;
-    id++;
-    return id;
-}
