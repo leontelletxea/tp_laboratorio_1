@@ -22,70 +22,8 @@
 int main()
 {
     LinkedList* listEmployee = ll_newLinkedList();
-    int i;
-    //int size;
-    //int i;
 
     optionMenu(listEmployee);
-
-    ////////////////////////////////////////////////////
-
-    /**
-    Employee* e1 = (Employee*) malloc(sizeof(Employee));
-    Employee* e2 = (Employee*) malloc(sizeof(Employee));
-    Employee* e3 = (Employee*) malloc(sizeof(Employee));
-
-    e1->id = 5;
-    e1->horasTrabajadas = 10;
-    strcpy(e1->nombre,"Juan");
-    e1->sueldo = 10000;
-
-    e2->id = 1;
-    e2->horasTrabajadas = 15;
-    strcpy(e2->nombre,"Martin");
-    e2->sueldo = 15000;
-
-    e3->id = 3;
-    e3->horasTrabajadas = 10;
-    strcpy(e3->nombre,"Aria");
-    e3->sueldo = 20000;
-
-    ll_add(miLista, e1);
-    ll_add(miLista, e2);
-    ll_add(miLista, e3);
-
-
-
-    size = ll_len(miLista);
-
-
-    ll_sort(miLista,employee_CompareById,0);
-
-    for(i=0; i<size; i++)
-    {
-        aux =(Employee*) ll_get(miLista, i);
-        printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
-
-    }
-    */
-
-    ////////////////////////////////////////////////////////////////////////////////////////
-
-    /**
-    printf("Remuevo 1\n");
-
-    ll_remove(miLista, 1);
-
-    size = ll_len(miLista);
-    for(i=0; i<size; i++)
-    {
-        aux =(Employee*) ll_get(miLista, i);
-        printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
-
-    }
-
-    printf("El indice de e2 es: %d\n", ll_indexOf(miLista,e3));
-    */
 
     return 0;
 }

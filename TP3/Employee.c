@@ -131,7 +131,7 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
 int employee_CompareByName(Employee* e1, Employee* e2)
 {
     int ret;
-    //verificar nulidad
+
     if(e1!=NULL && e2!=NULL)
     {
         ret = strcmp(e1->nombre, e2->nombre);
@@ -145,7 +145,7 @@ int employee_CompareByName(Employee* e1, Employee* e2)
 int employee_CompareById(Employee* e1, Employee* e2)
 {
     int ret;
-    //verificar nulidad
+
     if(e1!=NULL && e2!=NULL)
     {
         if(e1->id > e2->id)

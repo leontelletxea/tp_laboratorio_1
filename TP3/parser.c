@@ -28,12 +28,12 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
             auxEmployee = employee_newParametros(id, nombre, horasTrabajadas, sueldo);
             ll_add(pArrayListEmployee, auxEmployee);
         }
-        printf("Se cargaron los datos desde el archivo data.csv (Texto)\n\n");
+        printf("*Se cargaron los datos desde el archivo data.csv (Modo Texto)\n\n");
         fclose(pFile);
     }
     else
     {
-        printf("\nImposible cargar los datos\n\n");
+        printf("*Imposible cargar los datos\n\n");
     }
 
     return 1;
@@ -57,12 +57,12 @@ int parser_EmployeeFromBinary(FILE* pFile, LinkedList* pArrayListEmployee)
                 ll_add(pArrayListEmployee, auxEmployee);
             }
         }
-        printf("Se cargaron los datos desde el archivo data.bin (Binario)\n\n");
+        printf("*Se cargaron los datos desde el archivo data.bin (Modo Binario)\n\n");
         fclose(pFile);
     }
     else
     {
-        printf("\nImposible cargar los datos\n\n");
+        printf("*Imposible cargar los datos\n\n");
     }
 
     return 1;
