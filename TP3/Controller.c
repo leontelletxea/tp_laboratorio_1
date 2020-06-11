@@ -229,6 +229,35 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
+    int option;
+
+    do
+    {
+        system("cls");
+        printf("\n1.Ordenar por Nombre de la A-Z");
+        printf("2.Ordenar por Nombre de la Z-A\n");
+        printf("3.Ordenar por Id de menor a mayor\n");
+        printf("4.Ordenar por Id mayor a menor\n");
+        printf("5.Salir del menu ordenar\n");
+        option = getInt("\nElija una opcion: ", "\nError, elija una opcion valida: ", 1, 5);
+
+        switch(option)
+        {
+        case 1:
+            ll_sort(listEmployee, employee_CompareByName, 1);
+            break;
+        case 2:
+            ll_sort(listEmployee, employee_CompareByName, 0);
+            break;
+        case 3:
+            ll_sort(listEmployee, employee_CompareById, 1);
+            break;
+        case 4:
+            ll_sort(listEmployee, employee_CompareById, 0);
+            break;
+        }
+    }while(option!=5);
+    printf("\nSaliendo del menu ordenar...\n\n");
 
     return 1;
 }
@@ -340,8 +369,6 @@ void optionMenu(LinkedList* listEmployee)
             controller_ListEmployee(listEmployee);
             break;
         case 7:
-            //ll_sort(listEmployee, employee_CompareByName, 1);
-            ll_sort(listEmployee, employee_CompareById, 0);
             controller_ListEmployee(listEmployee);
             break;
         case 8:
