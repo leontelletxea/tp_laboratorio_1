@@ -130,34 +130,41 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
 
 int employee_CompareByName(Employee* e1, Employee* e2)
 {
+    int ret;
     //verificar nulidad
+    if(e1!=NULL && e2!=NULL)
+    {
+        ret = strcmp(e1->nombre, e2->nombre);
+    }else{
+        ret = -1;
+    }
 
-    return strcmp(e1->nombre, e2->nombre);
+    return ret;
 }
 
 int employee_CompareById(Employee* e1, Employee* e2)
 {
+    int ret;
     //verificar nulidad
-
-    if(e1->id > e2->id)
+    if(e1!=NULL && e2!=NULL)
     {
-        return 1;
-    }
-    else
-    {
-        if(e1->id < e2->id)
+        if(e1->id > e2->id)
         {
-            return -1;
+            ret = 1;
         }
         else
         {
-            return 0;
+            if(e1->id < e2->id)
+            {
+                ret = -1;
+            }
+            else
+            {
+                ret = 0;
+            }
         }
     }
-
-
-
-    return strcmp(e1->nombre, e2->nombre);
+    return ret;
 }
 
 

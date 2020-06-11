@@ -76,13 +76,129 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
-return 1;
+    Employee* auxEmployee;
+    int searchId;
+    int index;
+    int i;
+    int size;
+    int option;
+    int id;
+    int hoursWorked;
+    float salary;
+    char name[51];
+    char answer;
+
+    searchId = getInt("\nIngrese el id de usuario que desea modificar: ", "\nError, ingrese un id valido", 1, 5000);
+    size = ll_len(pArrayListEmployee);
+
+    for(i=0; i<size; i++)
+    {
+        auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
+        id=auxEmployee->id;
+        strcpy(name, auxEmployee->nombre);
+        hoursWorked=auxEmployee->horasTrabajadas;
+        salary=auxEmployee->sueldo;
+        if(id==searchId)
+        {
+            index = i;
+            break;
+        }
+    }
+
+    if(auxEmployee!=NULL && auxEmployee->id==searchId)
+    {
+
+    do
+    {
+        printf("\n\n%4d %10s %10d              $%.1f\n", id, name, hoursWorked, salary);
+        printf("\n\nMenu de edicion\n");
+        printf("1.Nombre\n");
+        printf("2.Horas Trabajadas\n");
+        printf("3.Sueldo\n");
+        printf("4.Guardar cambios\n");
+        printf("5.Salir del menu\n");
+        option = getInt("Seleccione una opcion: ", "\nError, ingrese una opcion valida: ", 1, 5);
+        system("cls");
+
+        switch(option)
+        {
+        case 1:
+            getWord(name, "\nIngrese el nuevo nombre: ");
+            break;
+        case 2:
+            hoursWorked = getInt("\nIngrese la nueva cantidad de horas trabajadas: ", "\nError, ingrese una cantidad valida: ", 1, 48);
+            break;
+        case 3:
+            salary = getFloat("\nIngrese el nuevo sueldo: ", "\nError, ingrese un sueldo valido: ", 10000, 100000);
+            break;
+        case 4:
+            answer = getChar("\nEsta seguro que desea actualizar este empleado? (Enter=Si / n=No): ", "\nError, ingrese (Enter=Si / n=No): ", '\n', 'n');
+            if(answer=='\n')
+            {
+                auxEmployee->id=id;
+                strcpy(auxEmployee->nombre, name);
+                auxEmployee->horasTrabajadas=hoursWorked;
+                auxEmployee->sueldo=salary;
+                ll_set(pArrayListEmployee, index, auxEmployee);
+                printf("\nEl empleado fue actualizado satisfactoriamente\n\n");
+            }else{
+                id=auxEmployee->id;
+                strcpy(name, auxEmployee->nombre);
+                hoursWorked=auxEmployee->horasTrabajadas;
+                salary=auxEmployee->sueldo;
+                printf("\nSe cancelo la modificacion de el empleado\n\n");
+            }
+            break;
+        }
+    }while(option!=5);
+    system("cls");
+    printf("\nSaliendo del menu de edicion...\n\n");
+    }else{
+        printf("\nError, empleado no encontrado...\n\n");
+    }
+
+    return 1;
 }
 
 
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
-return 1;
+    Employee* auxEmployee;
+    int searchId;
+    int index;
+    int i;
+    int size;
+    int* id=0;
+    char answer;
+
+    searchId = getInt("\nIngrese el id de usuario que desea eliminar: ", "\nError, ingrese un id valido: ", 1, 5000);
+    size = ll_len(pArrayListEmployee);
+
+    for(i=0; i<size; i++)
+    {
+        auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
+        if(auxEmployee->id==searchId)
+        {
+            index = i;
+            break;
+        }
+    }
+
+    if(size!=NULL && auxEmployee!=NULL && auxEmployee->id==searchId)
+    {
+        answer = getChar("\nEsta seguro que desea eliminar a este empleado? (Enter=Si / n=No): ", "\nError, ingrese (Enter=Si / n=No): ", '\n', 'n');
+        if(answer=='\n')
+        {
+            ll_remove(pArrayListEmployee, index);
+            printf("\nEl empleado fue removido satisfactoriamente\n\n");
+        }else{
+            printf("\nSe cancelo la eliminacion de el empleado\n\n");
+        }
+    }else{
+        printf("\nError, empleado no encontrado...\n\n");
+    }
+
+    return 1;
 }
 
 
@@ -91,13 +207,19 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
     Employee* auxEmployee;
     int i;
     int size;
+    int* id=0;
+    int* horasTrabajadas=0;
+    char nombre[51];
 
     size = ll_len(pArrayListEmployee);
-    printf("        Id      Nombre Horas Trabajadas       Sueldo\n");
+    printf("  Id     Nombre  Horas Trabajadas        Sueldo\n");
     for(i=0; i<size; i++)
     {
         auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
-        printf("%10d %10s %10d              $%.1f\n", auxEmployee->id, auxEmployee->nombre, auxEmployee->horasTrabajadas, auxEmployee->sueldo);
+        employee_getId(auxEmployee, &id);
+        employee_getNombre(auxEmployee, nombre);
+        employee_getHorasTrabajadas(auxEmployee, &horasTrabajadas);
+        printf("%4d %10s %10d              $%.1f\n", id, nombre, horasTrabajadas, auxEmployee->sueldo);
     }
     printf("\nList size: %d\n\n", size);
 
@@ -107,7 +229,8 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
-return 1;
+
+    return 1;
 }
 
 
@@ -119,7 +242,6 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
     int size;
     int* id=0;
     int* horasTrabajadas=0;
-    //float* sueldo=0;
     char nombre[51];
 
     size = ll_len(pArrayListEmployee);
@@ -138,7 +260,6 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
             employee_getId(auxEmployee, &id);
             employee_getNombre(auxEmployee, nombre);
             employee_getHorasTrabajadas(auxEmployee, &horasTrabajadas);
-            //employee_getSueldo(auxEmployee, &sueldo); El getter de sueldo me devuelve cero por eso lo comento
             fprintf(pData, "%d,%s,%d,%f\n", (int)id, nombre, (int)horasTrabajadas, auxEmployee->sueldo);
         }
         printf("Se guardo la lista correctamente en el archivo data.csv (Texto)\n\n");
@@ -208,13 +329,20 @@ void optionMenu(LinkedList* listEmployee)
             controller_addEmployee(listEmployee);
             break;
         case 4:
+            controller_ListEmployee(listEmployee);
+            controller_editEmployee(listEmployee);
             break;
         case 5:
+            controller_ListEmployee(listEmployee);
+            controller_removeEmployee(listEmployee);
             break;
         case 6:
             controller_ListEmployee(listEmployee);
             break;
         case 7:
+            //ll_sort(listEmployee, employee_CompareByName, 1);
+            ll_sort(listEmployee, employee_CompareById, 0);
+            controller_ListEmployee(listEmployee);
             break;
         case 8:
             controller_saveAsText("data.csv", listEmployee);

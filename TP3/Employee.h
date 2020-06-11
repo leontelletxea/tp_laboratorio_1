@@ -8,12 +8,6 @@ typedef struct
     float sueldo;
 }Employee;
 
-typedef struct
-{
-    char cabecera[128];
-
-}Cabecera;
-
 Employee* employee_new();
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr);
 void employee_delete();
