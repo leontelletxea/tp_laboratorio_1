@@ -509,34 +509,3 @@ void optionMenu(LinkedList* listEmployee)
         printf("Saliendo del Menu...\n");
 }
 
-int createEmployeeId(LinkedList* pArrayListEmployee)
-{
-    Employee* auxEmployee;
-    int i;
-    int size;
-    int maximum;
-    int id;
-
-    size = ll_len(pArrayListEmployee);
-
-    if(size>0)
-    {
-        for(i=0; i<size; i++)
-        {
-            auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
-            if(auxEmployee!=NULL)
-            {
-                employee_getId(auxEmployee, &id);
-                if(id > maximum || i==0)
-                {
-                    maximum = id;
-                }
-            }
-        }
-    }else{
-        maximum = 0;
-    }
-    maximum++;
-
-    return maximum;
-}

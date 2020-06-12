@@ -8,10 +8,43 @@ typedef struct
     float sueldo;
 }Employee;
 
+/** \brief Crea un empleado en memoria dinamica (Constructor por defecto)
+ *
+ * \return Employee* Retorna el empleado creado en memoria dinamica
+ *
+ */
 Employee* employee_new();
-Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr);
-void employee_delete();
 
+/** \brief Crea un empleado en memoria dinamica, recibiendo los parametros y transformandolos en los tipos de datos correspondientes
+ *         (Constructor Parametrizado)
+ * \param idStr char* El id del empleado
+ * \param nombreStr char* El nombre de empleado
+ * \param horasTrabajadasStr char* Las horas trabajadas por el empleado
+ * \param sueldoStr char* El sueldo del empleado
+ * \return Employee* Retorna el empleado creado con parametros en memoria dinamica
+ *
+ */
+Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr);
+
+/** \brief Establece la comparacion entre dos tipos de empleados de la LinkedList por nombre
+ *
+ * \param e1 Employee* El primer empleado
+ * \param e2 Employee* El segundo empleado
+ * \return int Retorna la comparacion entre ambos
+ *
+ */
+int employee_CompareByName(Employee* e1, Employee* e2);
+
+/** \brief Establece la comparacion entre dos tipos de empleados de la LinkedList por id
+ *
+ * \param e1 Employee* El primer empleado
+ * \param e2 Employee* El segundo empleado
+ * \return int Retorna 1 si el primer id es mayor que el segundo y 0 de lo contrario
+ *
+ */
+int employee_CompareById(Employee* e1, Employee* e2);
+
+/** Setters y Getters para evitar usar el operador -> */
 int employee_setId(Employee* this,int id);
 int employee_getId(Employee* this,int* id);
 
@@ -23,8 +56,6 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas);
 
 int employee_setSueldo(Employee* this,float sueldo);
 int employee_getSueldo(Employee* this,float* sueldo);
-
-int employee_CompareByName(Employee* e1, Employee* e2);
-int employee_CompareById(Employee* e1, Employee* e2);
+/** Setters y Getters para evitar usar el operador -> */
 
 #endif // employee_H_INCLUDED

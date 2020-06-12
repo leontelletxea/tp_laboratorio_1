@@ -25,9 +25,9 @@ dijo que lo pongamos exactamente de esa manera */
 
 int main()
 {
-    LinkedList* listEmployee = ll_newLinkedList();
+    LinkedList* listEmployee = ll_newLinkedList(); /** Creo una LinkedList */
 
-    optionMenu(listEmployee);
+    optionMenu(listEmployee); /** Y se la paso al menu que operara con ella */
 
     return 0;
 }
