@@ -127,7 +127,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     {
         printf("  Id     Nombre  Horas Trabajadas        Sueldo\n\n");
         printf("%4d %10s %10d              $%.1f", id, name, hoursWorked, salary);
-        printf("\n\nMenu de edicion\n");
+        printf("\n\n*** Menu Editar ***\n");
         printf("1.Nombre\n");
         printf("2.Horas Trabajadas\n");
         printf("3.Sueldo\n");
@@ -303,7 +303,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
         do
         {
             system("cls");
-            printf("||| Menu ordenar |||\n");
+            printf("*** Menu ordenar ***\n");
             printf("1.Ordenar por Nombre de la A-Z\n");
             printf("2.Ordenar por Nombre de la Z-A\n");
             printf("3.Ordenar por Id de menor a mayor\n");
@@ -459,7 +459,7 @@ void optionMenu(LinkedList* listEmployee)
 
     do
     {
-        printf("||| MENU |||\n");
+        printf("*** Menu Principal ***\n");
         printf("1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).\n");
         printf("2. Cargar los datos de los empleados desde el archivo data.csv (modo binario).\n");
         printf("3. Alta de empleado\n");
