@@ -28,21 +28,21 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
 
 /** \brief Establece la comparacion entre dos tipos de empleados de la LinkedList por nombre
  *
- * \param e1 Employee* El primer empleado
- * \param e2 Employee* El segundo empleado
+ * \param e1 void* El primer empleado
+ * \param e2 void* El segundo empleado
  * \return int Retorna la comparacion entre ambos
  *
  */
-int employee_CompareByName(Employee* e1, Employee* e2);
+int employee_CompareByName(void* e1, void* e2);
 
 /** \brief Establece la comparacion entre dos tipos de empleados de la LinkedList por id
  *
- * \param e1 Employee* El primer empleado
- * \param e2 Employee* El segundo empleado
+ * \param e1 void* El primer empleado
+ * \param e2 void* El segundo empleado
  * \return int Retorna 1 si el primer id es mayor que el segundo y 0 de lo contrario
  *
  */
-int employee_CompareById(Employee* e1, Employee* e2);
+int employee_CompareById(void* e1, void* e2);
 
 /** Setters y Getters para evitar usar el operador -> */
 int employee_setId(Employee* this,int id);

@@ -19,9 +19,7 @@
 *****************************************************/
 
 /** Nota: todas las variables y funciones en español, fueron brindadas por el profesor
-a la hora de pasar el comprimido con el proyecto. Si los warnings en el
-controller_ListEmployee() pasando el argumento 2 aparecen, el profesor
-dijo que lo pongamos exactamente de esa manera */
+    a la hora de pasar el comprimido con el proyecto, las deje tal cual las recibi */
 
 int main()
 {

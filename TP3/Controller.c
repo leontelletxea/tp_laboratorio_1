@@ -245,6 +245,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
             printf("*Error, empleado no encontrado...\n\n");
         }
     }else if(size==0){
+            system("cls");
             printf("*No hay empleados cargados, ingrese 1 o 2 para cargarlos o 3 para dar de alta uno\n\n");
         }
     return 1;
@@ -454,6 +455,7 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 void optionMenu(LinkedList* listEmployee)
 {
     int option;
+    int flag=0;
 
     do
     {
@@ -475,12 +477,19 @@ void optionMenu(LinkedList* listEmployee)
         {
         case 1:
             controller_loadFromText("data.csv", listEmployee);
+            flag=1;
             break;
         case 2:
             controller_loadFromBinary("data.bin", listEmployee);
+            flag=1;
             break;
         case 3:
-            controller_addEmployee(listEmployee);
+            if(flag==1)
+            {
+                controller_addEmployee(listEmployee);
+            }else{
+                printf("*Por favor, primero carge la lista con la opcion 1 o 2\n\n");
+            }
             break;
         case 4:
             controller_ListEmployee(listEmployee);
