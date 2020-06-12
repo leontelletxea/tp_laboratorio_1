@@ -14,7 +14,7 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 
     pData = fopen(path,"r");
 
-    if(pData!=NULL)
+    if(pArrayListEmployee!=NULL && pData!=NULL)
     {
         parser_EmployeeFromText(pData, pArrayListEmployee);
     }
@@ -27,7 +27,7 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
 
     pData = fopen(path,"rb");
 
-    if(pData!=NULL)
+    if(pArrayListEmployee!=NULL && pData!=NULL)
     {
         parser_EmployeeFromBinary(pData, pArrayListEmployee);
     }

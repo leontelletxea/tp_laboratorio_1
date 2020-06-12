@@ -21,10 +21,8 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
         employee_setId(listEmployee, auxInt);
         employee_setNombre(listEmployee, nombreStr);
         auxInt = atoi(horasTrabajadasStr);
-        listEmployee->horasTrabajadas = auxInt;
         employee_setHorasTrabajadas(listEmployee, auxInt);
         auxFloat = atof(sueldoStr);
-        listEmployee->sueldo = auxFloat;
         employee_setSueldo(listEmployee, auxFloat);
     }
     return listEmployee;
