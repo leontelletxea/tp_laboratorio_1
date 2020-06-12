@@ -18,10 +18,8 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
     {
         parser_EmployeeFromText(pData, pArrayListEmployee);
     }
-
     return 1;
 }
-
 
 int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
 {
@@ -33,10 +31,8 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
     {
         parser_EmployeeFromBinary(pData, pArrayListEmployee);
     }
-
     return 1;
 }
-
 
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
@@ -80,10 +76,8 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
             printf("\n*Imposible cargar el empleado\n\n");
         }
     }
-
     return 1;
 }
-
 
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
@@ -122,7 +116,6 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 
     if(auxEmployee!=NULL && auxEmployee->id==searchId)
     {
-
     do
     {
         printf("  Id     Nombre  Horas Trabajadas        Sueldo\n\n");
@@ -177,10 +170,8 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
         printf("*Error, empleado no encontrado...\n\n");
     }
     }
-
     return 1;
 }
-
 
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
@@ -251,7 +242,6 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     return 1;
 }
 
-
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
     Employee* auxEmployee;
@@ -285,10 +275,8 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
             printf("*No hay empleados cargados, ingrese 1 o 2 para cargarlos o 3 para dar de alta uno\n\n");
         }
     }
-
     return 1;
 }
-
 
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
@@ -364,10 +352,8 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
     }else if(size==0){
             printf("*No hay empleados cargados, ingrese 1 o 2 para cargarlos o 3 para dar de alta uno\n\n");
         }
-
     return 1;
 }
-
 
 int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
 {
@@ -385,7 +371,6 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
     if(size>0)
     {
         pData = fopen(path, "w");
-
         if(pData!=NULL)
         {
             for(i=0; i<size; i++)
@@ -415,20 +400,18 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
     return 1;
 }
 
-
 int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 {
     Employee* auxEmployee;
+    FILE* pData;
     int i;
     int size=0;
-    FILE* pData;
 
     size = ll_len(pArrayListEmployee);
 
     if(size>0)
     {
         pData = fopen(path, "wb");
-
         if(pData!=NULL)
         {
             for(i=0; i<size; i++)
@@ -447,8 +430,6 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
     }else if(size==0){
             printf("*No hay empleados cargados, ingrese 1 o 2 para cargarlos o 3 para dar de alta uno\n\n");
         }
-
-
     return 1;
 }
 

@@ -30,12 +30,9 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
         }
         printf("*Se cargaron los datos desde el archivo data.csv (Modo Texto)\n\n");
         fclose(pFile);
-    }
-    else
-    {
+    }else{
         printf("*Imposible cargar los datos\n\n");
     }
-
     return 1;
 }
 
@@ -59,12 +56,9 @@ int parser_EmployeeFromBinary(FILE* pFile, LinkedList* pArrayListEmployee)
         }
         printf("*Se cargaron los datos desde el archivo data.bin (Modo Binario)\n\n");
         fclose(pFile);
-    }
-    else
-    {
+    }else{
         printf("*Imposible cargar los datos\n\n");
     }
-
     return 1;
 }
 
@@ -96,6 +90,5 @@ int createEmployeeId(LinkedList* pArrayListEmployee)
         maximum = 0;
     }
     maximum++;
-
     return maximum;
 }

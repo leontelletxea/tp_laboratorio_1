@@ -5,9 +5,9 @@
 Employee* employee_new()
 {
     Employee* listEmployee = (Employee*) malloc(sizeof(Employee));
-
     return listEmployee;
 }
+
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr)
 {
     Employee* listEmployee;
@@ -27,10 +27,8 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
         listEmployee->sueldo = auxFloat;
         employee_setSueldo(listEmployee, auxFloat);
     }
-
     return listEmployee;
 }
-
 
 int employee_setNombre(Employee* this,char* nombre)
 {
@@ -40,10 +38,8 @@ int employee_setNombre(Employee* this,char* nombre)
         strcpy(this->nombre, nombre);
         ret = 1;
     }
-
     return ret;
 }
-
 int employee_getNombre(Employee* this,char* nombre)
 {
     int ret = 0;
@@ -52,11 +48,8 @@ int employee_getNombre(Employee* this,char* nombre)
         strcpy(nombre, this->nombre);
         ret = 1;
     }
-
     return ret;
 }
-
-
 
 int employee_setSueldo(Employee* this,float sueldo)
 {
@@ -66,7 +59,6 @@ int employee_setSueldo(Employee* this,float sueldo)
         this->sueldo = sueldo;
         ret = 1;
     }
-
     return ret;
 }
 int employee_getSueldo(Employee* this,float* sueldo)
@@ -77,7 +69,6 @@ int employee_getSueldo(Employee* this,float* sueldo)
         *sueldo = this->sueldo;
         ret = 1;
     }
-
     return ret;
 }
 
@@ -89,7 +80,6 @@ int employee_setId(Employee* this,int id)
         this->id = id;
         ret = 1;
     }
-
     return ret;
 }
 int employee_getId(Employee* this,int* id)
@@ -100,7 +90,6 @@ int employee_getId(Employee* this,int* id)
         *id = this->id;
         ret = 1;
     }
-
     return ret;
 }
 
@@ -112,7 +101,6 @@ int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
         this->horasTrabajadas = (int)horasTrabajadas;
         ret = 1;
     }
-
     return ret;
 }
 int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
@@ -123,47 +111,50 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
         *horasTrabajadas = this->horasTrabajadas;
         ret = 1;
     }
-
     return ret;
 }
 
 
 int employee_CompareByName(void* e1, void* e2)
 {
-    Employee* emp1 = (Employee*) e1;
-    Employee* emp2 = (Employee*) e2;
+    Employee* employee1 = (Employee*) e1;
+    Employee* employee2 = (Employee*) e2;
     int ret;
+    char nameEmployee1[51];
+    char nameEmployee2[51];
 
-    if(emp1!=NULL && emp2!=NULL)
+    employee_getNombre(employee1, nameEmployee1);
+    employee_getNombre(employee2, nameEmployee2);
+
+    if(employee1!=NULL && employee2!=NULL)
     {
-        ret = strcmp(emp1->nombre, emp2->nombre);
+        ret = strcmp(nameEmployee1, nameEmployee2);
     }else{
         ret = -1;
     }
-
     return ret;
 }
-
 int employee_CompareById(void* e1, void* e2)
 {
-    Employee* emp1 = (Employee*) e1;
-    Employee* emp2 = (Employee*) e2;
+    Employee* employee1 = (Employee*) e1;
+    Employee* employee2 = (Employee*) e2;
     int ret;
+    int idEmployee1;
+    int idEmployee2;
 
-    if(emp1!=NULL && emp2!=NULL)
+    employee_getId(employee1, &idEmployee1);
+    employee_getId(employee2, &idEmployee2);
+
+    if(employee1!=NULL && employee2!=NULL)
     {
-        if(emp1->id > emp2->id)
+        if(idEmployee1 > idEmployee2)
         {
             ret = 1;
-        }
-        else
-        {
-            if(emp1->id < emp2->id)
+        }else{
+            if(idEmployee1 < idEmployee2)
             {
                 ret = -1;
-            }
-            else
-            {
+            }else{
                 ret = 0;
             }
         }

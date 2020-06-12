@@ -19,7 +19,8 @@
 *****************************************************/
 
 /** Nota: todas las variables y funciones en español, fueron brindadas por el profesor
-    a la hora de pasar el comprimido con el proyecto, las deje tal cual las recibi */
+    a la hora de pasar el comprimido con el proyecto, sus declaraciones permanecieron
+    intactas durante el desarrollo del TP */
 
 int main()
 {
