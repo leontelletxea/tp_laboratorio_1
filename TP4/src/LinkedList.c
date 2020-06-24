@@ -18,7 +18,7 @@ LinkedList* ll_newLinkedList(void)
 
     if(this != NULL)
     {
-        this->size=0;
+        this->size = 0;
         this->pFirstNode = NULL;
     }
     return this;
@@ -61,7 +61,7 @@ static Node* getNode(LinkedList* this, int nodeIndex)
     Node* pNode = NULL;
     int i;
 
-    if(this != NULL  && nodeIndex <(ll_len(this)) && nodeIndex >= 0)
+    if(this != NULL  && nodeIndex <ll_len(this) && nodeIndex >= 0)
     {
         pNode = this->pFirstNode;
 
@@ -269,12 +269,23 @@ int ll_remove(LinkedList* this, int index)
  */
 int ll_clear(LinkedList* this)
 {
+    Node* pNode = NULL;
     int returnAux = -1;
+    int len;
+    int i;
 
     if(this != NULL)
     {
+        len = ll_len(this);
+
+        for(i=0; i<len; i++)
+        {
+            ll_remove(this, i);
+        }
+
         this->pFirstNode = NULL;
         this->size=0;
+
         returnAux = 0;
     }
 
@@ -291,12 +302,23 @@ int ll_clear(LinkedList* this)
  */
 int ll_deleteLinkedList(LinkedList* this)
 {
+    Node* pNode = NULL;
     int returnAux = -1;
+    int len;
+    int i;
 
     if(this != NULL)
     {
+        len = ll_len(this);
+
+        for(i=0; i<len; i++)
+        {
+            ll_remove(this, i);
+        }
+
         this->pFirstNode = NULL;
         this->size=0;
+
         free(this);
         returnAux = 0;
     }
@@ -323,7 +345,7 @@ int ll_indexOf(LinkedList* this, void* pElement)
     {
         len = ll_len(this);
 
-        for(i=0; i < len; i++)
+        for(i=0; i<len; i++)
         {
             auxElement = ll_get(this, i);
             if(auxElement == pElement)
@@ -380,7 +402,6 @@ int ll_push(LinkedList* this, int index, void* pElement)
     {
         returnAux = addNode(this, index, pElement);
     }
-
 
     return returnAux;
 }
@@ -475,6 +496,7 @@ int ll_containsAll(LinkedList* this, LinkedList* this2)
                 counter++;
             }
         }
+
         if(counter == len2)
         {
             returnAux = 1;
@@ -506,7 +528,7 @@ LinkedList* ll_subList(LinkedList* this, int from, int to)
 
         for(i=from; i<to; i++)
         {
-            pElement = ll_get(this,i);
+            pElement = ll_get(this, i);
             ll_add(auxList, pElement);
         }
     }
@@ -526,19 +548,13 @@ LinkedList* ll_clone(LinkedList* this)
 {
     LinkedList* auxList = NULL;
     void* pElement = NULL;
+    int from = 0;
     int len;
-    int i;
 
     if(this != NULL)
     {
         len = ll_len(this);
-        auxList = ll_newLinkedList();
-
-        for(i=0; i<len; i++)
-        {
-            pElement = ll_get(this, i);
-            ll_add(auxList, pElement);
-        }
+        auxList = ll_subList(this, from, len);
     }
 
     return auxList;
@@ -554,8 +570,8 @@ LinkedList* ll_clone(LinkedList* this)
  */
 int ll_sort(LinkedList* this, int (*pFunc)(void*, void*), int order)
 {
-    void* pElementI = NULL;
-    void* pElementJ = NULL;
+    void* elementI = NULL;
+    void* elementJ = NULL;
     void* auxElement = NULL;
     int returnAux =-1;
     int len;
@@ -569,19 +585,19 @@ int ll_sort(LinkedList* this, int (*pFunc)(void*, void*), int order)
         {
             for(j=i+1; j<len; j++)
             {
-                pElementI = ll_get(this, i);
-                pElementJ = ll_get(this, j);
+                elementI = ll_get(this, i);
+                elementJ = ll_get(this, j);
 
-                if(pFunc(pElementI, pElementJ)==1 && order == 1)
+                if(pFunc(elementI, elementJ)==1 && order == 1)
                 {
-                    auxElement = pElementI;
-                    ll_set(this,i,pElementJ);
-                    ll_set(this,j,auxElement);
+                    auxElement = elementI;
+                    ll_set(this, i, elementJ);
+                    ll_set(this, j, auxElement);
 
-                }else if(pFunc(pElementI, pElementJ)==-1 && order == 0)
+                }else if(pFunc(elementI, elementJ)==-1 && order == 0)
                 {
-                    auxElement = pElementI;
-                    ll_set(this, i, pElementJ);
+                    auxElement = elementI;
+                    ll_set(this, i, elementJ);
                     ll_set(this, j, auxElement);
                 }
             }
