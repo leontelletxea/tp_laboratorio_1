@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../inc/LinkedList.h"
+#include "LinkedList.h"
 
 static Node* getNode(LinkedList* this, int nodeIndex);
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
@@ -269,7 +269,6 @@ int ll_remove(LinkedList* this, int index)
  */
 int ll_clear(LinkedList* this)
 {
-    Node* pNode = NULL;
     int returnAux = -1;
     int len;
     int i;
@@ -302,7 +301,6 @@ int ll_clear(LinkedList* this)
  */
 int ll_deleteLinkedList(LinkedList* this)
 {
-    Node* pNode = NULL;
     int returnAux = -1;
     int len;
     int i;
@@ -547,7 +545,6 @@ LinkedList* ll_subList(LinkedList* this, int from, int to)
 LinkedList* ll_clone(LinkedList* this)
 {
     LinkedList* auxList = NULL;
-    void* pElement = NULL;
     int from = 0;
     int len;
 
