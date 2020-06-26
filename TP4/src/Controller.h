@@ -80,6 +80,12 @@ void controller_clear(LinkedList* listEmployee);
 
 void controller_delete(LinkedList* listEmployee);
 
+LinkedList* controller_clone(LinkedList* listEmployee);
+
+void controller_containsAll(LinkedList* listEmployee);
+
+void controller_push(LinkedList* listEmployee);
+
 /** \brief Menu de opciones corriente
  *
  * \param listEmployee LinkedList* LinkedList* La LinkedList sobre la cual se esta trabajando

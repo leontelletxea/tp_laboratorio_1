@@ -70,25 +70,29 @@ int createEmployeeId(LinkedList* pArrayListEmployee)
     int maximum;
     int id;
 
-    size = ll_len(pArrayListEmployee);
-
-    if(size>0)
+    if(pArrayListEmployee != NULL)
     {
-        for(i=0; i<size; i++)
+        size = ll_len(pArrayListEmployee);
+
+        if(size>0)
         {
-            auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
-            if(auxEmployee!=NULL)
+            for(i=0; i<size; i++)
             {
-                employee_getId(auxEmployee, &id);
-                if(id > maximum || i==0)
+                auxEmployee =(Employee*) ll_get(pArrayListEmployee, i);
+                if(auxEmployee!=NULL)
                 {
-                    maximum = id;
+                    employee_getId(auxEmployee, &id);
+                    if(id > maximum || i==0)
+                    {
+                        maximum = id;
+                    }
                 }
             }
+        }else{
+            maximum = 0;
         }
-    }else{
-        maximum = 0;
+        maximum++;
     }
-    maximum++;
+
     return maximum;
 }
