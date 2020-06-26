@@ -5104,7 +5104,7 @@
 
 1532345152 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\testing\utest.h
 
-1592958220 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\inc\linkedlist.h
+1593131268 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\inc\linkedlist.h
 
 1532345166 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\testing\inc\employee.h
 
@@ -5325,13 +5325,13 @@
 	<stdlib.h>
 	<string.h>
 
-1592968683 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\linkedlist.c
+1593128643 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../inc/LinkedList.h"
 
-1592951898 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\main.c
+1593128582 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -5339,4 +5339,37 @@
 	"../inc/LinkedList.h"
 
 1532345168 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\testing\inc\main_test.h
+
+1593128317 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\employee.c
+	<stdlib.h>
+	"Employee.h"
+	<string.h>
+
+1593128317 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\employee.h
+
+1593131373 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"Validations.h"
+
+1593128499 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\parser.h
+
+1593128428 c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\validations.h
+
+1593128428 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\validations.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validations.h"
+
+1593128648 source:c:\users\leon\desktop\programacion & labo i\repositorios git\tp_laboratorio_1\tp4\src\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/LinkedList.h"
+	"Employee.h"
 
