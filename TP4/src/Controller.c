@@ -46,7 +46,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 
     if(pArrayListEmployee!=NULL)
     {
-        if(ll_len(pArrayListEmployee) > 0)
+        if(!ll_isEmpty(pArrayListEmployee))
         {
             auxEmployee = employee_new();
             if(auxEmployee!=NULL)
@@ -77,7 +77,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
             }else{
                 printf("\n*Imposible cargar el empleado\n\n");
             }
-        }else if(ll_len(pArrayListEmployee) == 0)
+        }else if(ll_isEmpty(pArrayListEmployee))
         {
             printf("*Imposible cargar el empleado, primero cargue la lista con la opcion 1 o 2 del menu\n\n");
         }
@@ -540,9 +540,6 @@ void controller_containsAll(LinkedList* listEmployee)
         }else if(returnAux == 0)
         {
             printf("\n*Todos los elementos de la lista de empleados 2 NO estan contenidos en la lista de empleados 1\n\n");
-        }else if(returnAux = -1)
-        {
-            printf("\n*Imposible comprobar que los elementos de la lista de empleados 2 estan contenidos en la lista de empleados 1\n\n");
         }
         }else if(ll_isEmpty(listEmployee)){
                 printf("*No hay empleados cargados, ingrese 1 o 2 para cargarlos o 3 para dar de alta uno\n\n");

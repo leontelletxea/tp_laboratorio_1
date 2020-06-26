@@ -118,7 +118,7 @@ static int addNode(LinkedList* this, int nodeIndex, void* pElement)
         }else if(nodeIndex>0 && ll_len(this)>0)
         {
             prevNode = getNode(this,nodeIndex-1);
-            newNode->pNextNode = prevNode->pNextNode;
+            //newNode->pNextNode = prevNode->pNextNode;
             prevNode->pNextNode = newNode;
             newNode->pElement = pElement;
             this->size++;
