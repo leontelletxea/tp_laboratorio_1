@@ -102,6 +102,7 @@ static int addNode(LinkedList* this, int nodeIndex, void* pElement)
     int returnAux = -1;
     Node *newNode = NULL;
     Node *prevNode = NULL;
+    Node *nextNode = NULL;
 
     if(this != NULL && nodeIndex >= 0 && nodeIndex<=ll_len(this))
     {
@@ -109,7 +110,7 @@ static int addNode(LinkedList* this, int nodeIndex, void* pElement)
 
         if(nodeIndex == 0 && ll_len(this)==0)
         {
-            //newNode->pNextNode = this->pFirstNode;
+            newNode->pNextNode = NULL;
             newNode->pElement = pElement;
             this->pFirstNode = newNode;
             this->size++;
@@ -117,20 +118,22 @@ static int addNode(LinkedList* this, int nodeIndex, void* pElement)
 
         }else if(nodeIndex>0 && ll_len(this)>0)
         {
-            prevNode = getNode(this,nodeIndex-1);
-            //newNode->pNextNode = prevNode->pNextNode;
-            prevNode->pNextNode = newNode;
+            prevNode = getNode(this, nodeIndex-1);
+            newNode->pNextNode = prevNode->pNextNode;
             newNode->pElement = pElement;
+            prevNode->pNextNode = newNode;
             this->size++;
             returnAux = 0;
         }
-        /*else if(nodeIndex == 0 && ll_len(this)>0)
+        else if(nodeIndex == 0 && ll_len(this)>0)
         {
-            prevNode = getNode(this,nodeIndex);
-            this->pFirstNode = newNode;
-            newNode->pNextNode = prevNode;
+            nextNode = getNode(this, nodeIndex);
+            newNode->pNextNode = nextNode;
             newNode->pElement = pElement;
-        }*/
+            this->pFirstNode = newNode;
+            this->size++;
+            returnAux = 0;
+        }
     }
 
     return returnAux;

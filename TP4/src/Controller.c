@@ -549,8 +549,8 @@ void controller_containsAll(LinkedList* listEmployee)
 
 void controller_push(LinkedList* listEmployee)
 {
-    Employee* auxEmployee;
-    Employee* temporaryEmployee;
+    Employee* auxEmployee = NULL;
+    Employee* temporaryEmployee = employee_new();
     int returnAux;
     int searchId;
     int size;
@@ -661,7 +661,7 @@ void optionMenu(LinkedList* listEmployee)
             controller_containsAll(listEmployee);
             break;
         case 13:
-            //controller_push(listEmployee);
+            controller_push(listEmployee);
             break;
         }
         }while(option!=14);
