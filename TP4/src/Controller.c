@@ -665,5 +665,6 @@ void optionMenu(LinkedList* listEmployee)
             break;
         }
         }while(option!=14);
+        system("cls");
         printf("Saliendo del Menu...\n");
 }
